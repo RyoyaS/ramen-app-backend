@@ -11,6 +11,8 @@ export class AppController {
     @Query('lng') lng: number,
   ): Promise<string[]> {
     console.log(lat, lng);
-    return await this.appService.getShopList(lat, lng);
+    const shop = await this.appService.getShopList(lat, lng);
+    console.log(shop);
+    return shop;
   }
 }
